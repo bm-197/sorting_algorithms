@@ -19,6 +19,8 @@ void node_swap(listint_t **h, listint_t **num1, listint_t *num2)
 	else
 		*h = num2;
 	(*num1)->prev = num2;
+	*num1 = num2->prev;
+}
 
 
 /**
