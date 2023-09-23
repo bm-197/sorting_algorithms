@@ -15,12 +15,11 @@ void node_swap(listint_t **h, listint_t **num1, listint_t *num2)
 	num2->prev = (*num1)->prev;
 	num2->next = *num1;
 	if ((*num1)->prev != NULL)
-		(*num1)->prev->next = num2;
+		(*num1)->prev->next = nnum2;
 	else
 		*h = num2;
 	(*num1)->prev = num2;
-	*num1 = num2->next;
-}
+
 
 /**
  * insertion_sort_list - sorts a doubly linked list of
@@ -35,15 +34,14 @@ void insertion_sort_list(listint_t **list)
 	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
 
-	for (iter = (*list); iter->next != NULL; iter = tmp)
+	for (iter = (*list)->next; iter != NULL; iter = tmp)
 	{
 		tmp = iter->next;
 		insert = iter->prev;
-		while (insert->prev != NULL && insert->n > iter->n)
+		while (insert != NULL && iter->n < insert->n)
 		{
 			node_swap(list, &insert, iter);
 			print_list((const listint_t *)*list);
 		}
 	}
-
 }
