@@ -2,7 +2,7 @@
 
 /**
  * swap_nums - Swaping two given number inside an array
- * 
+ *
  * @num1: fist number to swap
  * @num2: the second number to swap
  */
@@ -31,7 +31,7 @@ void bubble_sort(int *array, size_t size)
 	for (i = 0; i < len; i++)
 	{
 		flag = 0;
-		for (j = 0; j< len - 1 -i; j++)
+		for (j = 0; j < len - 1 - i; j++)
 		{
 			if (array[j] > array[j + 1])
 			{
