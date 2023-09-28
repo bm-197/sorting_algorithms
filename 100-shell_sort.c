@@ -17,16 +17,16 @@ void shell_sort(int *array, size_t size)
 
 	while (h > 0)
 	{
-		for (int i = h; i < n; i++)
+		for (int i = h; i < size; i++)
 		{
 			int pivot = array[i];
 			j = i;
 			while (j >= h && array[j - h] > pivot)
 			{
-				a[j] = a[j-h];
+				array[j] = array[j-h];
 				j = j - h;
 			}
-			a[j - h]=pivot;
+			array[j - h]=pivot;
 			print_array(array, size);
 		}
 		h = h/3;
