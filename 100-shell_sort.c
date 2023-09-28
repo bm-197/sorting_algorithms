@@ -8,7 +8,7 @@
 
 void shell_sort(int *array, size_t size)
 {
-	int h = 1, j;
+	size_t h = 1, j, i;
 
 	while (h < size)
 	{
@@ -17,7 +17,7 @@ void shell_sort(int *array, size_t size)
 
 	while (h > 0)
 	{
-		for (int i = h; i < size; i++)
+		for (i = h; i < size; i++)
 		{
 			int pivot = array[i];
 			j = i;
