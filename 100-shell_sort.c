@@ -34,9 +34,10 @@ void shell_sort(int *array, size_t size)
 		for (i = h; i < size; i++)
 		{
 			j = i;
-			while (j >= h && array[j - h] > pivot)
+			while (j >= h && array[j - h] > array[j])
 			{
-				swap_ints(arrat[j], array[j - h]);
+				swap_ints(array + j, array + (j - h));
+				j -= h;
 			}
 		}
 		print_array(array, size);
